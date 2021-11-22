@@ -2,8 +2,8 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using SBAddressAPI.data;
-using SBAddressAPI.domain;
+using SBAddressAPI.Models;
+using SBAddressAPI.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 

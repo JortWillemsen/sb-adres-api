@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-using SBAddressAPI.domain;
+using SBAddressAPI.Models;
 
-namespace SBAddressAPI.data
+namespace SBAddressAPI.Repositories
 {
     public class AddressRepository : IAddressRepository
     {
@@ -15,27 +14,28 @@ namespace SBAddressAPI.data
         {
             _context = context;
         }
-        public async Task<IEnumerable<AddressEntity>> GetAll()
+        public async Task<IEnumerable<Address>> GetAll()
         {
             return await _context.Addresses.ToListAsync();
         }
 
-        public async Task<AddressEntity> Get(int id)
+        public async Task<Address?> Get(int id)
         {
             return await _context.Addresses.FindAsync(id);
         }
 
-        public async Task<AddressEntity> Create(AddressEntity addressEntity)
+        public async Task<Address> Create(Address address)
         {
-            _context.Addresses.Add(addressEntity);
+            _context.Addresses.Add(address);
             await _context.SaveChangesAsync();
 
-            return addressEntity;
+            return address;
         }
 
-        public async Task Update(AddressEntity addressEntity)
+        public async Task Update(Address address)
         {
-            _context.Entry(addressEntity).State = EntityState.Modified;
+            _context.ChangeTracker.Clear();
+            _context.Entry(address).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 

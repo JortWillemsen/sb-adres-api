@@ -14,10 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="data\" />
-    <Folder Include="data\entity" />
-    <Folder Include="presentation" />
-    <Folder Include="presentation\" />
+    <Folder Include="Controllers\" />
   </ItemGroup>
 
 </Project>

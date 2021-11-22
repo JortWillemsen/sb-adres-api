@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using SBAddressAPI.domain;
 
-namespace SBAddressAPI.data
+namespace SBAddressAPI.Models
 {
     public class AddressContext : DbContext
     {
@@ -11,6 +10,6 @@ namespace SBAddressAPI.data
             Database.EnsureCreated();
             
         }
-        public DbSet<AddressEntity> Addresses { get; set; } 
+        public DbSet<Address> Addresses { get; set; } 
     }
 }
