@@ -15,7 +15,7 @@ namespace SBAddressAPI.data
         {
             _context = context;
         }
-        public async Task<IEnumerable<Address>> Get()
+        public async Task<IEnumerable<Address>> GetAll()
         {
             return await _context.Addresses.ToListAsync();
         }

@@ -6,7 +6,7 @@ namespace SBAddressAPI.data
 {
     public interface IAddressRepository
     {
-        Task<IEnumerable<Address>> Get();
+        Task<IEnumerable<Address>> GetAll();
         Task<Address> Get(int id);
         Task<Address> Create(Address address);
         Task Update(Address address);
