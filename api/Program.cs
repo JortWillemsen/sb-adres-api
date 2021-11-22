@@ -7,7 +7,8 @@ using SBAddressAPI.domain;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddDbContext<AddressContext>(o => o.UseSqlite("Data source=address.db"));
+builder.Services.AddDbContext<AddressContext>(o => 
+    o.UseSqlite("Data source=address.db"));
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
