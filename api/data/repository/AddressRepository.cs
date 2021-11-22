@@ -15,27 +15,27 @@ namespace SBAddressAPI.data
         {
             _context = context;
         }
-        public async Task<IEnumerable<Address>> GetAll()
+        public async Task<IEnumerable<AddressEntity>> GetAll()
         {
             return await _context.Addresses.ToListAsync();
         }
 
-        public async Task<Address> Get(int id)
+        public async Task<AddressEntity> Get(int id)
         {
             return await _context.Addresses.FindAsync(id);
         }
 
-        public async Task<Address> Create(Address address)
+        public async Task<AddressEntity> Create(AddressEntity addressEntity)
         {
-            _context.Addresses.Add(address);
+            _context.Addresses.Add(addressEntity);
             await _context.SaveChangesAsync();
 
-            return address;
+            return addressEntity;
         }
 
-        public async Task Update(Address address)
+        public async Task Update(AddressEntity addressEntity)
         {
-            _context.Entry(address).State = EntityState.Modified;
+            _context.Entry(addressEntity).State = EntityState.Modified;
             await _context.SaveChangesAsync();
         }
 

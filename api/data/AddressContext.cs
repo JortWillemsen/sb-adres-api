@@ -11,6 +11,6 @@ namespace SBAddressAPI.data
             Database.EnsureCreated();
             
         }
-        public DbSet<Address> Addresses { get; set; } 
+        public DbSet<AddressEntity> Addresses { get; set; } 
     }
 }

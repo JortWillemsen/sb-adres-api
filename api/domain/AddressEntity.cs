@@ -2,9 +2,10 @@
 
 namespace SBAddressAPI.domain
 {
-    public class Address
+    public class AddressEntity
     {
-        public Address() {}
+        public AddressEntity() {}
+        
         [Key] public int Id { get; set; }
         public string Street { get; set; }
         public int HomeNumber { get; set; }

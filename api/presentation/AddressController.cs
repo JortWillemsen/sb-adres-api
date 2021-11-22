@@ -22,7 +22,7 @@ namespace SBAddressAPI.presentation
         }
         
         [HttpGet]
-        public async Task<IEnumerable<Address>> GetAllAddresses()
+        public async Task<IEnumerable<AddressEntity>> GetAllAddresses()
         {
             return await _addressRepository.GetAll();
         }

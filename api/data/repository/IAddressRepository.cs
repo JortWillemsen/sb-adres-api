@@ -6,10 +6,10 @@ namespace SBAddressAPI.data
 {
     public interface IAddressRepository
     {
-        Task<IEnumerable<Address>> GetAll();
-        Task<Address> Get(int id);
-        Task<Address> Create(Address address);
-        Task Update(Address address);
+        Task<IEnumerable<AddressEntity>> GetAll();
+        Task<AddressEntity> Get(int id);
+        Task<AddressEntity> Create(AddressEntity addressEntity);
+        Task Update(AddressEntity addressEntity);
         Task Delete(int id);
     }
 }
