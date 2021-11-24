@@ -19,7 +19,7 @@ namespace SBAddressAPI.Controllers
         }
 
         [HttpGet]
-        public List<Address> GetAllAddresses([FromQuery] AddressSortOptions sortOptions, [FromQuery] AddressFilterOptions filterOptions)
+        public Task<List<Address>> GetAllAddresses([FromQuery] AddressSortOptions sortOptions, [FromQuery] AddressFilterOptions filterOptions)
         {
             var result = _addressRepository.GetAll(sortOptions, filterOptions);
 
