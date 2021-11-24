@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -19,7 +18,8 @@ namespace SBAddressAPI.Controllers
         }
 
         [HttpGet]
-        public Task<List<Address>> GetAllAddresses([FromQuery] AddressSortOptions sortOptions, [FromQuery] AddressFilterOptions filterOptions)
+        public Task<List<Address>> GetAllAddresses([FromQuery] AddressSortOptions sortOptions,
+            [FromQuery] AddressFilterOptions filterOptions)
         {
             var result = _addressRepository.GetAll(sortOptions, filterOptions);
 

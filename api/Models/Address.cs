@@ -1,13 +1,12 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Reflection;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace SBAddressAPI.Models
 {
     public class Address
     {
-        public Address() {}
+        public Address()
+        {
+        }
 
         public Address(int id, string? street, int homeNumber, string? postalCode, string? city, string? country)
         {

@@ -1,8 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using System.Reflection;
-using System.Text;
-using Microsoft.VisualBasic;
+﻿using System.Text;
 
 namespace SBAddressAPI.Models
 {
@@ -19,12 +15,12 @@ namespace SBAddressAPI.Models
             var builder = new StringBuilder();
             foreach (var property in typeof(AddressFilterOptions).GetProperties())
             {
-                var value = property.GetValue(this);
-                if (property.GetValue(this) == null || property.GetValue(this)?.ToString() == "" || property.GetValue(this)?.ToString() == "0")
+                if (property.GetValue(this) == null || property.GetValue(this)?.ToString() == "" ||
+                    property.GetValue(this)?.ToString() == "0")
                 {
                     continue;
                 }
-                
+
                 builder.Append($"{property.Name} = {property.GetValue(this)}, ");
             }
 
