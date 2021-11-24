@@ -19,9 +19,11 @@ namespace SBAddressAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<IEnumerable<Address>> GetAllAddresses()
+        public List<Address> GetAllAddresses([FromQuery] AddressSortOptions sortOptions, [FromQuery] AddressFilterOptions filterOptions)
         {
-            return await _addressRepository.GetAll();
+            var result = _addressRepository.GetAll(sortOptions, filterOptions);
+
+            return result;
         }
 
         [HttpGet("{id:int}")]
