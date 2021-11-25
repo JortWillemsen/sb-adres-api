@@ -36,7 +36,6 @@ namespace SBAddressAPI.Controllers
             return address;
         }
 
-
         [HttpPost]
         public async Task<ActionResult<Address>> CreateAddress([FromBody] CreateAddressDto dto)
         {
