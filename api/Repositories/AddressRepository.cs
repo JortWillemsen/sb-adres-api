@@ -17,6 +17,7 @@ namespace SBAddressAPI.Repositories
 
         public Task<List<Address>> GetAll(AddressSortOptions sortOptions, AddressFilterOptions options)
         {
+            // Create a Gridify query and tell it what we need to filter and sort by.
             var gq = new GridifyQuery {Filter = options.ToGridifyString(), OrderBy = sortOptions.SortBy};
             return _context.Addresses.ApplyFilteringAndOrdering(gq).ToListAsync();
         }
