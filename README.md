@@ -46,17 +46,17 @@ When going to [localhost:5024](http://localhost:5024/) you will access the API.
 Note: This creates a new database instance and will not contain any data.
 
 ## What am I proud of
-I am proud of the fact that I was able to build an API in C# wich I have never done before. I managed to learn my way around ASP.NET core very fast. It looks a lot like Spring Boot ;). 
+I am proud of the fact that I was able to build an API in C# which I have never done before. I managed to learn my way around ASP.NET core very fast. It looks a lot like Spring Boot ;). 
 
 If I had more time I would like to add HATEOAS to all my endpoints and create a different Docker container to run my database.
 
-I think the solution I used for sorting and filtering is quite nifty. I have limited experience in C# .NET and needed to find a solution to this problem. This package did the trick and the way I created a string from the filter options is rather scalable because it doesn't care how much attribues AddressFilterOptions has and loops through them all.
+I think the solution I used for sorting and filtering is quite nifty. I have limited experience in C# .NET and needed to find a solution to this problem. This package did the trick and the way I created a string from the filter options is rather scalable because it doesn't care how much attributes AddressFilterOptions has and loops through them all.
 if you wanted to add another option to filter by you just add it to the FilterOptions Model and it will work (Given the database has a row named like the attribute).
 
 ## What I would do differently
-I come from the world of Java where we use a strictly layerd architecture with a Presentation, Application and Data layer. For this project I only used the Presentation and Data layers wich is fine for this type of project but it might not be scalable when trying to add more functionality to one request.
+I come from the world of Java where we use a strictly layered architecture with a Presentation, Application and Data layer. For this project I only used the Presentation and Data layers which is fine for this type of project but it might not be scalable when trying to add more functionality to one request.
 
-I also did not like the way I used git for this project. I generally use [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for my projects wich requires strict branch protection and feature branches for everything you add. I quickly figured out that because I was working alone on this using Git flow really does not add anything, so i just pushed to the development branch.
+I also did not like the way I used git for this project. I generally use [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for my projects which requires strict branch protection and feature branches for everything you add. I quickly figured out that because I was working alone on this using Git flow really does not add anything, so i just pushed to the development branch.
 
 ## Querying distances between addresses
 
@@ -72,6 +72,6 @@ I found an API that could handle both of these problems seperately: [Mapbox](htt
 
 Mapbox has some constrainst though. It is technically free but we need an account to get an API key and can only query 1000 times a month. And when we need 2 queries for one result that benifits us that can tick up rather quickly. There is another solution:
 
-Just as Mapbox, Google Maps also has an public API for querying distances and can even deduct coordinates from a string that represents an address. But just as Mapbox the Google maps api also has limitations. We need to supply a credit card, even when we are only using the free tier of the API and to do that we first need to create a Google developer account wich requires a €25 fee.
+Just as Mapbox, Google Maps also has an public API for querying distances and can even deduct coordinates from a string that represents an address. But just as Mapbox the Google maps api also has limitations. We need to supply a credit card, even when we are only using the free tier of the API and to do that we first need to create a Google developer account which requires a €25 fee.
 
-And thus whilest those solutions will absolutely work when given the proper resources the are most likely not viable for such a small problem as this. Due to my limited time to research this problem I have not found a suitable solution for this assignment but I hope I have given a sufficient explanation on how I would go about solving a problem like this!
+And thus whilst those solutions will absolutely work when given the proper resources the are most likely not viable for such a small problem as this. Due to my limited time to research this problem I have not found a suitable solution for this assignment but I hope I have given a sufficient explanation on how I would go about solving a problem like this!
