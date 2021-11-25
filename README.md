@@ -12,9 +12,51 @@ This project is a case made for Social Brothers. A software company based in Utr
 
 ## Dependencies
 
-- [Swashbuckle ASP.NET Core](https://www.nuget.org/packages/Swashbuckle.AspNetCore/)
-- [Entity Framework Core SQlite](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/?tabs=dotnet-core-cli)
-- [Gridify](https://alirezanet.github.io/Gridify/)
+- [Swashbuckle ASP.NET Core](https://www.nuget.org/packages/Swashbuckle.AspNetCore/) (Swagger UI implementation)
+- [Entity Framework Core SQlite](https://docs.microsoft.com/en-us/ef/core/providers/sqlite/?tabs=dotnet-core-cli) (SQLite repositories and Entity mapping)
+- [Gridify](https://alirezanet.github.io/Gridify/) (Sorting and Filtering database resources)
+
+## Endpoints
+
+- GET `/swagger` exposes the Swagger UI documentation.
+- GET `/api/address` gives back all addresses found in the database.
+- GET `/api/address/{id}` gives back an address with a certain id found in the database.
+- POST `/api/address` Creates a new address entry in the Database.
+- PUT `/api/address/{id}` Modifies an existing address.
+- DELETE `/api/address/{id}` Deletes an existing address from the database.
+
+For more information about the endpoints and how to use them head over to `/swagger`.
+## How to Run
+
+### Dotnet
+
+When .NET core is installed you can head to the `/api` directory  and run the following command:
+
+`dotnet run`
+
+This will build the project. You can head over to [localhost:7299](http://localhost:7299/) to see it running.
+
+### Docker
+If you have Docker installed you can run this project by running:
+
+`docker run -d -p 5024:80 --name app sbaddressapi`
+
+When going to [localhost:5024](http://localhost:5024/) you will access the API.
+
+Note: This creates a new database instance and will not contain any data.
+
+## What am I proud of
+I am proud of the fact that I was able to build an API in C# wich I have never done before. I managed to learn my way around ASP.NET core very fast. It looks a lot like Spring Boot ;). 
+
+If I had more time I would like to add HATEOAS to all my endpoints and create a different Docker container to run my database.
+
+I think the solution I used for sorting and filtering is quite nifty. I have limited experience in C# .NET and needed to find a solution to this problem. This package did the trick and the way I created a string from the filter options is rather scalable because it doesn't care how much attribues AddressFilterOptions has and loops through them all.
+if you wanted to add another option to filter by you just add it to the FilterOptions Model and it will work (Given the database has a row named like the attribute).
+
+## What I would do differently
+I come from the world of Java where we use a strictly layerd architecture with a Presentation, Application and Data layer. For this project I only used the Presentation and Data layers wich is fine for this type of project but it might not be scalable when trying to add more functionality to one request.
+
+I also did not like the way I used git for this project. I generally use [Git Flow](https://www.atlassian.com/git/tutorials/comparing-workflows/gitflow-workflow) for my projects wich requires strict branch protection and feature branches for everything you add. I quickly figured out that because I was working alone on this using Git flow really does not add anything, so i just pushed to the development branch.
 
 ## Querying distances between addresses
 
